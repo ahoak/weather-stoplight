@@ -28,19 +28,19 @@ GPIO.output(REDP, False)
 
 # other constants
 OBJMAX = 3                         	# set max hours/pop to average
-TIME_BETWEEN_CALLS = 900            # seconds between calls to the weather api
-TIME_BETWEEN_FAILED = 300           # seconds between failed calls to the weather api
-MAX_FAIL_LOOP_COUNT = 15            # maximum number of attempts from API before program terminates
-API = 								#Weather Underground api key (obtain from weather underground)
-STATE = "CO//Denver"				#State Params 
-MAXLOOP = 450						#max loop for flashing lights 
+TIME_BETWEEN_CALLS = 900            	# seconds between calls to the weather api
+TIME_BETWEEN_FAILED = 300           	# seconds between failed calls to the weather api
+MAX_FAIL_LOOP_COUNT = 15            	# maximum number of attempts from API before program terminates
+API = 					#Weather Underground api key (obtain from weather underground)
+STATE = "CO//Denver"			#State Params 
+MAXLOOP = 450				#max loop for flashing lights 
 
 def parseWeatherData(obj):
     # parse data obtained from the weather api
     temp = [None]*OBJMAX
     pop = [None]*OBJMAX
-    counterT =0      # counter for temp
-    counterP =0      # coutner for pop
+    counterT =0      			# counter for temp
+    counterP =0      			# coutner for pop
     
     for i in range(OBJMAX):
         temp[i] = int(obj["hourly_forecast"][i]["temp"]["english"])
